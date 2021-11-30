@@ -8,197 +8,200 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Apartment owners association</title>
 </head>
 
 <body>
     <nav>
-        <div id="logo">
-            <img src="./assets/images/logo.png" alt="logo">
-            <span>Apartment owners <br /> association</span>
-            <label for="drop" class="toggle main-toggle">
-                <div id="burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </label>
-        </div>
-        <input type="checkbox" id="drop" />
-        <ul class="menu">
-            <li><a href="#">About us</a></li>
-            <li>
-                <label for="drop-1" class="toggle">Membership<i id="menu-chevron" class="chevron-down"
-                        hover="changeChevron()"></i></label>
-                <a href="#">Membership<i class="chevron-down"></i></a>
-                <input type="checkbox" id="drop-1" />
-                <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                </ul>
-
-            </li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">News and events</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <section id="hero-block" data-aos="fade-up">
-        <div id="hero-text" class="container">
-            <div>
-                <h2 class="block-title">Apartment ownership<br />with no headache</h2>
-                <p class="block-description">Wide selection of lorem usce volutpat lectus justo,<br /> ut suscipit felis
-                    congue ut. Vivamus ut ultricies ante<br /> dictum.</p>
+        <div class="nav-container">
+            <div id="logo">
+                <img src="./assets/images/logo.png" width="34" height="30" alt="logo">
+                <span class="logo-label">Apartment owners <br /> association</span>
+                <label for="drop" class="toggle main-toggle">
+                    <div id="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </label>
             </div>
+            <input type="checkbox" id="drop" class="menu-trigger" />
+            <ul class="menu">
+                <li class="menu-item"><a class="menu-a" href="#">About us</a></li>
+                <li class="menu-item menu-dropdown">
+                    <label for="drop-1" class="toggle">Membership<i id="menu-chevron" class="chevron-down"></i></label>
+                    <a class="menu-a" href="#">Membership<i class="membership-chevron chevron-down"></i></a>
+                    <input type="checkbox" id="drop-1" class="menu-trigger" />
+                    <ul class="sub-menu">
+                        <li class="sub-menu-item"><a class="menu-a" href="#">Link 1</a></li>
+                        <li class="sub-menu-item"><a class="menu-a" href="#">Link 2</a></li>
+                        <li class="sub-menu-item"><a class="menu-a" href="#">Link 3</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item"><a class="menu-a" href="#">Services</a></li>
+                <li class="menu-item"><a class="menu-a" href="#">News and events</a></li>
+                <li class="menu-item"><a class="menu-a" href="#">Contact</a></li>
+            </ul>
         </div>
-    </section>
-    <section id="tenant-block" class="container grid" data-aos="fade-right">
-        <div id="tenant-text" class="block-text">
-            <h3 class="block-small-title">Know who lives at your home with</h3>
-            <h2 class="block-title">Tenant screening service</h2>
-            <p class="block-description">Tenant Screening is a service that allows you to Lorem usce volutpat lectus
-                justo, ut suscipit felis
-                congue ut. <br /> Vivamus ut ultricies ante dictum.
-            </p>
-            <a href="" class="button">Try it</a>
-        </div>
-        <div id="tenant-img">
-            <img src="assets/images/tenant.png" alt="tenant">
-        </div>
-    </section>
-    <section id="advertising-block" class="container grid" data-aos="fade-left">
-        <div id="advertising-text" class="block-text">
-            <h3 class="block-small-title">Make your business grow with</h3>
-            <h2 class="block-title">Advertising</h2>
-            <p class="block-description">Wide selection of advertising oportunities like Lorem usce volutpat lectus
-                justo, ut suscipit felis
-                congue ut. Vivamus ut ultricies ante dictum.</p>
-            <a href="" class="button">Learn more</a>
-        </div>
-        <div id="advertising-img">
-            <img src="assets/images/book.png" alt="book">
-        </div>
-    </section>
-    <section id="agents-block" class="container" data-aos="fade-up">
-        <div>
-            <h2 class="block-title">Our agents</h2>
-            <table class="agents-table">
-                <thead>
-                    <tr>
-                        <th>Navn</th>
-                        <th>Company</th>
-                        <th>Level</th>
-                        <th>Deals closed</th>
-                        <th>State</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-label="Navn">Christian Andersen</td>
-                        <td data-label="Company">Pixel Inc.</td>
-                        <td data-label="Level">Senior</td>
-                        <td data-label="Deals closed">315</td>
-                        <td data-label="State">California</td>
-                        <td data-label="Phone">+1764156161</td>
-                        <td data-label="Email">chandersen@pixel.com </td>
-                    </tr>
-                    <tr>
-                        <td data-label="Navn">Christian Andersen</td>
-                        <td data-label="Company">Pixel Inc.</td>
-                        <td data-label="Level">Senior</td>
-                        <td data-label="Deals closed">315</td>
-                        <td data-label="State">California</td>
-                        <td data-label="Phone">+1764156161</td>
-                        <td data-label="Email">chandersen@pixel.com </td>
-                    </tr>
-                    <tr>
-                        <td data-label="Navn">Christian Andersen</td>
-                        <td data-label="Company">Pixel Inc.</td>
-                        <td data-label="Level">Senior</td>
-                        <td data-label="Deals closed">315</td>
-                        <td data-label="State">California</td>
-                        <td data-label="Phone">+1764156161</td>
-                        <td data-label="Email">chandersen@pixel.com </td>
-                    </tr>
-                    <tr>
-                        <td data-label="Navn">Christian Andersen</td>
-                        <td data-label="Company">Pixel Inc.</td>
-                        <td data-label="Level">Senior</td>
-                        <td data-label="Deals closed">315</td>
-                        <td data-label="State">California</td>
-                        <td data-label="Phone">+1764156161</td>
-                        <td data-label="Email">chandersen@pixel.com </td>
-                    </tr>
-                    <tr>
-                        <td data-label="Navn">Christian Andersen</td>
-                        <td data-label="Company">Pixel Inc.</td>
-                        <td data-label="Level">Senior</td>
-                        <td data-label="Deals closed">315</td>
-                        <td data-label="State">California</td>
-                        <td data-label="Phone">+1764156161</td>
-                        <td data-label="Email">chandersen@pixel.com </td>
-                    </tr>
-                    <tr>
-                        <td data-label="Navn">Christian Andersen</td>
-                        <td data-label="Company">Pixel Inc.</td>
-                        <td data-label="Level">Senior</td>
-                        <td data-label="Deals closed">315</td>
-                        <td data-label="State">California</td>
-                        <td data-label="Phone">+1764156161</td>
-                        <td data-label="Email">chandersen@pixel.com </td>
-                    </tr>
-                    <tr>
-                        <td data-label="Navn">Christian Andersen</td>
-                        <td data-label="Company">Pixel Inc.</td>
-                        <td data-label="Level">Senior</td>
-                        <td data-label="Deals closed">315</td>
-                        <td data-label="State">California</td>
-                        <td data-label="Phone">+1764156161</td>
-                        <td data-label="Email">chandersen@pixel.com </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="4">Total agents: 28 </td>
-                        <td colspan="2" class="footer-td">
-                            <div>Resultater per side:
-                                <select name="per-page" id="per-page">
-                                    <option>6</option>
-                                </select>
-                            </div>
-                        </td>
-                        <td colspan="1" class="footer-td">
-                            <div>
-                                Side 1 av 5 <i class="chevron-left"></i><i class="chevron-right"></i>
-                            </div>
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-    </section>
+    </nav>
+    <div id="main-block">
+        <section class="hero-block" data-aos="fade-up">
+            <div class="hero-text">
+                <div>
+                    <h2 class="block-title">Apartment ownership<br />with no headache</h2>
+                    <p class="block-description">Wide selection of lorem usce volutpat lectus justo, ut <br /> suscipit felis
+                        congue ut. Vivamus ut ultricies ante<br /> dictum.</p>
+                </div>
+            </div>
+        </section>
+        <section class="container grid" data-aos="fade-right">
+            <div class="tenant-text">
+                <h3 class="secondary-title">Know who lives at your home with</h3>
+                <h2 class="block-title">Tenant screening service</h2>
+                <p class="block-description">Tenant Screening is a service that allows you to Lorem <br /> usce volutpat lectus
+                    justo, ut suscipit felis
+                    congue ut. <br /> Vivamus ut ultricies ante dictum.
+                </p>
+                <a href="" class="button tenant-button">Try it</a>
+            </div>
+            <div id="tenant-img">
+                <img src="assets/images/tenant.png" height="350" alt="tenant">                
+            </div>
+        </section>
+        <section class="container grid" data-aos="fade-left">
+            <div class="advertising-text" class="block-text">
+                <h3 class="secondary-title">Make your business grow with</h3>
+                <h2 class="block-title">Advertising</h2>
+                <p class="block-description">Wide selection of advertising oportunities like Lorem usce volutpat lectus
+                    justo, ut suscipit felis
+                    congue ut. Vivamus <br /> ut ultricies ante dictum.</p>
+                <a href="" class="button advertising-button">Learn more</a>
+            </div>
+            <div id="advertising-img">
+                <img src="assets/images/book.png" height="350" alt="book">
+            </div>
+        </section>
+        <section class="agents-block container" data-aos="fade-up">
+            <div>
+                <h2 class="block-title">Our agents</h2>
+                <table class="agents-table">
+                    <thead>
+                        <tr>
+                            <th>Navn</th>
+                            <th>Company</th>
+                            <th>Level</th>
+                            <th>Deals closed</th>
+                            <th>State</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Navn">Christian Andersen</td>
+                            <td data-label="Company">Pixel Inc.</td>
+                            <td data-label="Level">Senior</td>
+                            <td data-label="Deals closed">315</td>
+                            <td data-label="State">California</td>
+                            <td data-label="Phone">+1764156161</td>
+                            <td data-label="Email">chandersen@pixel.com </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Navn">Christian Andersen</td>
+                            <td data-label="Company">Pixel Inc.</td>
+                            <td data-label="Level">Senior</td>
+                            <td data-label="Deals closed">315</td>
+                            <td data-label="State">California</td>
+                            <td data-label="Phone">+1764156161</td>
+                            <td data-label="Email">chandersen@pixel.com </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Navn">Christian Andersen</td>
+                            <td data-label="Company">Pixel Inc.</td>
+                            <td data-label="Level">Senior</td>
+                            <td data-label="Deals closed">315</td>
+                            <td data-label="State">California</td>
+                            <td data-label="Phone">+1764156161</td>
+                            <td data-label="Email">chandersen@pixel.com </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Navn">Christian Andersen</td>
+                            <td data-label="Company">Pixel Inc.</td>
+                            <td data-label="Level">Senior</td>
+                            <td data-label="Deals closed">315</td>
+                            <td data-label="State">California</td>
+                            <td data-label="Phone">+1764156161</td>
+                            <td data-label="Email">chandersen@pixel.com </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Navn">Christian Andersen</td>
+                            <td data-label="Company">Pixel Inc.</td>
+                            <td data-label="Level">Senior</td>
+                            <td data-label="Deals closed">315</td>
+                            <td data-label="State">California</td>
+                            <td data-label="Phone">+1764156161</td>
+                            <td data-label="Email">chandersen@pixel.com </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Navn">Christian Andersen</td>
+                            <td data-label="Company">Pixel Inc.</td>
+                            <td data-label="Level">Senior</td>
+                            <td data-label="Deals closed">315</td>
+                            <td data-label="State">California</td>
+                            <td data-label="Phone">+1764156161</td>
+                            <td data-label="Email">chandersen@pixel.com </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">
+                                <div class="agents-table-footer">
+                                    <div>Total agents: 28</div>
+                                    <div class="per-page-block">Resultater per side:
+                                        <select class="table-select" name="per-page" id="per-page">
+                                            <option>6</option>
+                                        </select>
+                                    </div>
+                                    <div class="current-page">
+                                        Side 1 av 5 <i class="chevron-left"></i><i class="chevron-right"></i>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr> 
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+    </div>
     <footer>
         <div>
             <p class="copyright">Copyright © 2020 Apartment Owners Association. All Rights Reserved. <br /><a
                     href="#">Privacy Policy</a></p>
         </div>
     </footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         window.onload = () => {
-            AOS.init();
+            AOS.init({disable: 'mobile'});
 
             const burgerButton = document.getElementById('burger');
+            let isOpen = false;
+            let setBurgerButtonClass = () => {
+                isOpen = !isOpen;
+                burgerButton.className = isOpen ? 'open' : '';
+            }
 
             burgerButton.onclick = () => {
-                burgerButton.className = document.getElementById('burger').className.includes('open') ? '' : 'open'
+                setBurgerButtonClass();
+            }
+
+            document.getElementById('main-block').onclick = () => {
+                if (isOpen) {
+                    burgerButton.click();
+                }
             }
         };
     </script>
