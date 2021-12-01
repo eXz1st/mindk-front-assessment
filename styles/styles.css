@@ -1,7 +1,20 @@
 @import "./variables.css";
 @import "./mixins.css";
 
-/* reset */
+/* ========================== Reset ========================== */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
 body,
 p,
 a,
@@ -15,35 +28,694 @@ li {
   list-style-type: none;
 }
 
-/* base styles */
+/* ========================== Main styles ========================== */
 body {
   background: var(--primary);
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
 
-/* fonts */
-h1,
-h2,
-h3,
-h4 {
-  font-weight: normal;
-  line-height: 1.4em;
+.button {
+  display: inline-block;
+  background: #55b8f0;
+  color: var(--primary);
+  border-radius: 30px;
+  padding: 14px 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 12px;
+  text-align: center;
+  width: 216px;
 }
-p,
-a,
-li {
-  color: #9893d8;
-  line-height: 1.4em;
-  font-size: 1em;
+
+.button:hover {
+  filter: brightness(95%);
 }
-h1,
-h3 {
-  font-size: 1.2em;
+
+.block-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--primary-font-color);
 }
-h2 {
-  font-size: 1.6em;
+
+.secondary-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--secondary-font-color);
 }
-h4 {
-  font-size: 1.1em;
+
+.block-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--primary-font-color);
+}
+
+.container {
+  max-width: 1160px;
+  margin: 60px auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.container .block-title,
+.secondary-title,
+.block-description {
+  margin: 8px 0;
+}
+
+.table-select {
+  padding: 0 5px;
+  margin-left: 10px;
+  width: 60px;
+  height: 25px;
+  border: 1px solid #a4a3ad;
+  border-radius: 4px;
+  font-size: inherit;
+  line-height: inherit;
+  z-index: 1;
+  color: #5c5c6c;
+}
+
+.chevron-down {
+  @apply --chevron-mixin;
+  position: relative;
+  margin-left: 5px;
+}
+.chevron-down::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  left: 4px;
+  top: 2px;
+}
+
+.chevron-left {
+  @apply --chevron-mixin;
+  position: relative;
+  margin-left: 5px;
+}
+.chevron-left::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(135deg);
+  left: 4px;
+  top: 2px;
+}
+
+.chevron-right {
+  @apply --chevron-mixin;
+  position: relative;
+  margin-left: 5px;
+}
+.chevron-right::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(-45deg);
+  left: 4px;
+  top: 2px;
+}
+/* ========================== End Main styles ========================== */
+
+/* ========================== Navigation ========================== */
+.site-nav {
+  overflow: hidden;
+  background-color: var(--primary);
+}
+
+.toggle,
+.menu-trigger {
+  display: none;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+}
+
+.nav-container {
+  margin: 0 auto;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+  padding-left: 0;
+  margin: 22px 3px;
+}
+
+.logo-label {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  margin: 3px 14px;
+  text-transform: uppercase;
+  color: var(--primary-font-color);
+}
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.menu {
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.menu-item {
+  margin: 0;
+  display: inline-block;
+  background-color: var(--primary);
+}
+
+.menu-dropdown {
+  margin-right: 13px;
+}
+
+.sub-menu-item {
+  background-color: var(--primary);
+}
+
+.menu-a {
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: var(--primary-font-color);
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 600;
+}
+
+.menu-a:hover {
+  background-color: var(--gray-color);
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+}
+
+.menu-item:hover > ul {
+  display: inherit;
+  z-index: 1;
+}
+
+.sub-menu-item {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+  z-index: 1;
+}
+
+.menu {
+  margin-top: 20px;
+}
+
+.menu-icon > .line {
+  background-color: var(--primary-font-color);
+  height: 2px;
+  display: block;
+}
+.menu-icon > .line + .line {
+  margin-top: 8px;
+}
+
+.main-toggle {
+  width: 40px;
+  margin-right: 20px;
+}
+
+.main-toggle:hover {
+  background: var(--primary);
+}
+
+#burger {
+  width: 40px;
+  height: 20px;
+  position: relative;
+  margin: 10px auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#burger span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: var(--primary-font-color);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#burger span:nth-child(1) {
+  top: 0%;
+  left: 25%;
+}
+
+#burger span:nth-child(2) {
+  top: 50%;
+  left: 25%;
+}
+
+#burger span:nth-child(3) {
+  top: 100%;
+  left: 25%;
+}
+
+#burger.open span:nth-child(1) {
+  top: 10px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#burger.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#burger.open span:nth-child(3) {
+  top: 10px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+/* ========================== End Navigation ========================== */
+
+/* ========================== Hero Block ========================== */
+.hero-block {
+  height: 398px;
+  margin: 0 auto;
+  display: grid;
+  background: url("../assets/images/hero.png") no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  position: relative;
+  top: 80px;
+}
+
+.hero-text .block-title {
+  margin-bottom: 22px;
+}
+/* ========================== End Hero Block ========================== */
+
+/* ========================== Tenant Block ========================== */
+#tenant-img {
+  grid-column: 1;
+  grid-row: 1;
+  max-width: 520px;
+}
+
+#tenant-img img {
+  max-width: 520px;
+}
+
+.tenant-text {
+  grid-column: 1;
+  grid-row: 2;
+}
+/* ========================== End Tenant Block ========================== */
+
+/* ========================== Advertising Block ========================== */
+#advertising-img {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#advertising-img img {
+  max-width: 520px;
+}
+
+.advertising-text {
+  grid-column: 1;
+  grid-row: 2;
+}
+/* ========================== End Advertising Block ========================== */
+
+/* ========================== Agents Block ========================== */
+.agents-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  box-shadow: 0 0 0 1px var(--gray-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.agents-table thead,
+tfoot {
+  background: var(--table-accent-color);
+}
+
+.agents-table th {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-font-color);
+}
+
+.agents-table td {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--dark-color);
+}
+
+.agents-table tbody td {
+  border-top: 1px solid var(--gray-color);
+  border-bottom: 1px solid var(--gray-color);
+}
+
+.agents-table td,
+.agents-table th {
+  padding: 15px 20px;
+}
+
+.agents-table .chevron-left,
+.agents-table .chevron-right {
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+.agents-table .chevron-left {
+  margin-left: 30px;
+  color: var(--gray-color);
+}
+
+.agents-table caption {
+  margin: 5px 0;
+}
+
+.agents-table-footer {
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.per-page-block {
+  margin-left: auto;
+}
+
+.current-page {
+  margin: 0 30px;
+}
+/* ========================== End Agents Block ========================== */
+
+/* ========================== Footer ========================== */
+footer {
+  background-color: var(--primary-font-color);
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.copyright {
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.copyright a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+/* ========================== End Footer ========================== */
+@media all and (max-width: 1279px) {
+  .container {
+    max-width: 800px;
+  }
+
+  .block-title,
+  .block-description {
+    text-align: center;
+  }
+
+  #logo {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  nav {
+    margin: 0;
+  }
+
+  .toggle + a,
+  .menu {
+    display: none;
+  }
+
+  .menu-item,
+  .menu-a {
+    text-align: center;
+  }
+
+  .sub-menu,
+  .sub-menu-item {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .toggle {
+    display: block;
+    background-color: var(--primary);
+    padding: 14px 20px 14px 0;
+    color: var(--primary-font-color);
+    text-decoration: none;
+    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .toggle:hover {
+    background-color: var(--gray-color);
+  }
+
+  nav a {
+    padding-left: 0;
+  }
+
+  .menu-trigger:checked + ul {
+    display: block;
+  }
+
+  .menu-item {
+    display: block;
+    width: 100%;
+  }
+
+  .sub-menu .toggle {
+    padding: 0 40px;
+  }
+
+  .menu-a:hover {
+    background-color: var(--gray-color);
+  }
+
+  #tenant-img,
+  #advertising-img,
+  .tenant-text,
+  .advertising-text {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  #tenant-img img,
+  #advertising-img img {
+    width: 100%;
+  }
+
+  .agents-table {
+    margin: 0 auto;
+    width: 400px;
+  }
+
+  .agents-table thead {
+    display: none;
+  }
+
+  .agents-table tr {
+    border-bottom: 3px solid var(--gray-color);
+    display: block;
+  }
+
+  .agents-table td {
+    border-bottom: 1px solid var(--gray-color);
+    display: block;
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .agents-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+
+  .agents-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .agents-table th,
+  .agents-table td {
+    padding: 5px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  nav {
+    height: 80px;
+  }
+
+  .nav-container {
+    width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .block-title {
+    font-size: 42px;
+  }
+
+  .block-description {
+    font-size: 18px;
+  }
+
+  .hero-text {
+    position: relative;
+    top: 50px;
+    left: 380px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    box-sizing: border-box;
+  }
+
+  #tenant-img {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .tenant-text {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .tenant-text .secondary-title {
+    margin-top: 66px;
+    letter-spacing: 0.01rem;
+  }
+
+  .tenant-text .block-title {
+    margin-top: 0;
+  }
+
+  .tenant-button {
+    margin: 14px 0;
+  }
+
+  .tenant-text .block-title,
+  .advertising-text .block-title,
+  .agents-block .block-title {
+    font-size: 36px;
+  }
+
+  .agents-block .block-title {
+    margin-bottom: 40px;
+  }
+
+  #advertising-img {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  #advertising-img img {
+    width: 520px;
+    float: right;
+    margin-top: -4px;
+  }
+
+  .advertising-text {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .advertising-text .secondary-title {
+    margin-top: 62px;
+    letter-spacing: 0.01rem;
+  }
+
+  .advertising-text .block-title {
+    margin-top: 0;
+  }
+
+  .advertising-button {
+    margin: 14px 0;
+  }
 }
